@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'my-app', //root app component. could be pm-root
   template: `
     <div><h1>{{pageTitle}}</h1>
-      <div>My First Component</div>
+      <pm-products></pm-products>
     </div>
   `
 })
