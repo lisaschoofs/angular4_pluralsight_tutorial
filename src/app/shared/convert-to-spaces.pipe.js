@@ -6,16 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var ConvertToSpacesPipe = (function () {
+    function ConvertToSpacesPipe() {
     }
-    return AppComponent;
+    ConvertToSpacesPipe.prototype.transform = function (value, character) {
+        return value.replace(character, ' ');
+    };
+    return ConvertToSpacesPipe;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "\n    <div><h1>{{pageTitle}}</h1>\n      <pm-products></pm-products>\n    </div>\n  "
+ConvertToSpacesPipe = __decorate([
+    core_1.Pipe({
+        name: 'convertToSpaces'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ConvertToSpacesPipe);
+exports.ConvertToSpacesPipe = ConvertToSpacesPipe;
+//# sourceMappingURL=convert-to-spaces.pipe.js.map
