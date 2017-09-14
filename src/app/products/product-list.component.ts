@@ -4,7 +4,8 @@ import { IProduct } from './product';
 import { ProductService } from './product.service';
 
 @Component({
-  selector: 'pm-products',
+  // selector: 'pm-products',
+  // ^what was done pre-routing. Nested into another component  
   templateUrl: './product-list.component.html',
   styleUrls: [
     './product-list.component.css'
