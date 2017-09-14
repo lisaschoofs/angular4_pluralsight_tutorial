@@ -43,9 +43,13 @@ var ProductListComponent = (function () {
         this.showImage = !this.showImage;
     };
     ProductListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         console.log('In OnInit.');
-        this.products = this._productService.getProducts();
-        this.filteredProducts = this.products;
+        this._productService.getProducts()
+            .subscribe(function (products) {
+            _this.products = products;
+            _this.filteredProducts = _this.products;
+        }, function (error) { return _this.errorMessage = error; });
     };
     return ProductListComponent;
 }());
