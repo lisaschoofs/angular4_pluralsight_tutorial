@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProductService } from "./products/product.service";
 
 @Component({
   selector: 'my-app', //root app component. could be pm-root
@@ -23,7 +22,6 @@ import { ProductService } from "./products/product.service";
   //   <pm-products></pm-products>
   // </div>
   // ^what was done pre-routing
-  providers: [ ProductService ]
 })
 
 export class AppComponent {
