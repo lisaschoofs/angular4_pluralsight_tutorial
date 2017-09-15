@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 import { IProduct } from './product';
 
@@ -12,9 +14,20 @@ export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Detail';
   product: IProduct;
 
-  constructor() {}
+  constructor(private _route: ActivatedRoute,
+              private _router: Router) { }
 
   ngOnInit() {
-
+    let id = +this._route.snapshot.paramMap.get('id');
+    this.pageTitle += `: ${id}`;
+    this.product = {}; // THIS will need to change... hard code a product per instructions.
+      //id was already specified elsewhere, that's why we're using it here.
+      //+ is a JS shortcut to switch string to numeric id
   }
+
+  onBack(): void {
+    this._router.navigate(['/products']);
+    //^we just define the path here.
+  }
+
 }
